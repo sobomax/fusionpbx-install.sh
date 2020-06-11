@@ -1,6 +1,7 @@
-#!/bin/sh
+#!/bin/sh -x
 
 #move to script directory so all relative paths work
+pwd
 cd "$(dirname "$0")"
 
 #includes
