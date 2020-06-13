@@ -8,7 +8,7 @@ system_branch=${system_branch:-master}         # master, stable
 # FreeSWITCH Settings
 switch_enabled=${switch_enabled:-true}         # true or false
 switch_branch=${switch_branch:-stable}         # master, stable (master requires source)
-switch_source=${switch_source:-package}        # package, port, source
+switch_source=${switch_source:-package}        # package, source, portpkghybrid
 switch_tls=${switch_tls:-true}                 # true or false
 
 # Database Settings

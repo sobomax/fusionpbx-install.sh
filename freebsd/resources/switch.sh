@@ -7,7 +7,7 @@ cd "$(dirname "$0")"
 . ./config.sh
 
 #install the package
-if [ .$switch_source = ."package" ]; then
+if [ .$switch_source = ."package" -o .$switch_source = ."portpkghybrid" ]; then
 	#run the package install
 	switch/package-release.sh
 
