@@ -111,7 +111,7 @@ if [ .$switch_enabled = .'true' ]; then
 	xml_cdr_password=$(cat /dev/random | env LC_CTYPE=C tr -dc a-zA-Z0-9 | head -c 20)
 
 	#set the conf directory
-	if [ .$switch_source = ."package" ]; then
+	if [ .$switch_source = ."package" -o .$switch_source = ."portpkghybrid" ]; then
 		conf_dir="/usr/local/etc/freeswitch";
 	fi
 	if [ .$switch_source = ."source" ]; then
