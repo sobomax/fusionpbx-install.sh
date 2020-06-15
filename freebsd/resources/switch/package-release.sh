@@ -50,7 +50,7 @@ cd $cwd
 echo 'memcached_enable="YES"' >> /etc/rc.conf
 echo 'freeswitch_enable="YES"' >> /etc/rc.conf
 echo 'freeswitch_flags="-nonat"' >> /etc/rc.conf
-echo 'freeswitch_user="www"' >> /etc/rc.conf
+echo 'freeswitch_user="freeswitch"' >> /etc/rc.conf
 echo 'freeswitch_group="www"' >> /etc/rc.conf
 
 #start the service
