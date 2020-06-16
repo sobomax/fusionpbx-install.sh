@@ -11,4 +11,4 @@ cp -R /usr/local/www/fusionpbx/resources/templates/conf/* /usr/local/etc/freeswi
 
 #copy the scripts
 cp -R /usr/local/www/fusionpbx/app/scripts/resources/scripts /usr/local/share/freeswitch
-chown -R www:www /usr/local/share/freeswitch
+chown -R ${switch_user}:${switch_group} /usr/local/share/freeswitch

@@ -30,7 +30,7 @@ if [ .$nginx_enabled = .'true' ]; then
 
 	#add the config.php
 	mkdir -p /etc/fusionpbx
-	chown -R www:www /etc/fusionpbx
+	chown -R ${switch_user}:${switch_group} /etc/fusionpbx
 	cp fusionpbx/config.php /etc/fusionpbx
 	sed -i' ' -e s:'{database_username}:fusionpbx:' /etc/fusionpbx/config.php
 	sed -i' ' -e s:"{database_password}:$database_password:" /etc/fusionpbx/config.php

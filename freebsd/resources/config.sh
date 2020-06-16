@@ -10,6 +10,8 @@ switch_enabled=${switch_enabled:-true}         # true or false
 switch_branch=${switch_branch:-stable}         # master, stable (master requires source)
 switch_source=${switch_source:-package}        # package, source, portpkghybrid
 switch_tls=${switch_tls:-true}                 # true or false
+switch_user=${switch_user:-"freeswitch"}       # username for running FS
+switch_group=${switch_group:-"www"}            # group for running FS
 
 # Database Settings
 database_enabled=${database_enabled:-true}     # true or false

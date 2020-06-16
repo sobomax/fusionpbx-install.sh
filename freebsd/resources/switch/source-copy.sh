@@ -9,4 +9,4 @@ cp -R /usr/local/www/fusionpbx/resources/templates/conf/* /usr/local/freeswitch/
 
 #copy the scripts
 cp -R /usr/local/www/fusionpbx/resources/install/scripts /usr/local/freeswitch
-chown -R www:www /usr/local/freeswitch
+chown -R ${switch_user}:${switch_group} /usr/local/freeswitch

@@ -25,8 +25,8 @@ fi
 
 #add the cache directory
 mkdir -p /var/cache/fusionpbx
-chown -R www:www /var/cache/fusionpbx
+chown -R ${switch_user}:${switch_group} /var/cache/fusionpbx
 
 #get the source code
 git clone $branch https://github.com/fusionpbx/fusionpbx.git /usr/local/www/fusionpbx
-chown -R www:www /usr/local/www/fusionpbx
+chown -R ${switch_user}:${switch_group} /usr/local/www/fusionpbx
