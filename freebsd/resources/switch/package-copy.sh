@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -x
+
 #make a backup of the conf directory
 #mv /usr/local/etc/freeswitch /usr/local/etc/freeswitch.orig
 
