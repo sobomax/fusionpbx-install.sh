@@ -66,7 +66,7 @@ if [ .$nginx_enabled = .'true' ]; then
 	service nginx restart || true
 fi
 if [ .$fail2ban_enabled = .'true' ]; then
-	service fail2ban restart
+	service fail2ban restart || true
 fi
 
 #add the database schema, user and groups
