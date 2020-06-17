@@ -53,5 +53,5 @@ mkdir -p /var/www/letsencrypt/
 
 #restart php fpm and nginx
 service php-fpm restart
-service nginx restart
+service nginx restart || true
 
