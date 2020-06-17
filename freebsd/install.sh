@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 #move to script directory so all relative paths work
 cd "$(dirname "$0")"
 
@@ -33,6 +35,11 @@ if [ .$sngrep_enabled = .'true' ]; then
 	resources/sngrep.sh
 fi
 
+#FreeSWITCH
+if [ .$switch_enabled = .'true' ]; then
+        resources/switch.sh
+fi
+
 #FusionPBX
 if [ .$nginx_enabled = .'true' ]; then
 	resources/fusionpbx.sh
@@ -46,11 +53,6 @@ fi
 #Fail2ban
 if [ .$fail2ban_enabled = .'true' ]; then
 	resources/fail2ban.sh
-fi
-
-#FreeSWITCH
-if [ .$switch_enabled = .'true' ]; then
-	resources/switch.sh
 fi
 
 #Postgres
