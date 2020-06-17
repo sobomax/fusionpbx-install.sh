@@ -18,7 +18,7 @@ cwd=$(pwd)
 echo "Installing the FreeSWITCH package"
 
 FS_PDIR="/usr/ports/net/freeswitch"
-MAKE_ARGS="-DBATCH PGSQL_VER=\"${database_version}\""
+MAKE_ARGS="-DBATCH PGSQL_VER=${database_version}"
 
 #install the package
 if [ .$portsnap_enabled = .'true' ]; then
