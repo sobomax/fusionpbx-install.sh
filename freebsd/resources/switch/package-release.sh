@@ -18,7 +18,7 @@ cwd=$(pwd)
 echo "Installing the FreeSWITCH package"
 
 FS_PDIR="/usr/ports/net/freeswitch"
-MAKE_ARGS="-DBATCH DEFAULT_VERSIONS=\"pgsql=${database_version}\""
+MAKE_ARGS="-DBATCH PGSQL_VER=\"${database_version}\""
 
 #install the package
 if [ .$portsnap_enabled = .'true' ]; then
@@ -29,7 +29,7 @@ else
 		PKGS=""
 		for dir in `make -C "${FS_PDIR}" ${MAKE_ARGS} build-depends-list run-depends-list | sort -u`
 		do
-			PKGS="`make -C "${dir}" -V PKGNAME | sed 's|-[^-]*$||'` ${PKGS}"
+			PKGS="`make -C "${dir}" ${MAKE_ARGS} -V PKGNAME | sed 's|-[^-]*$||'` ${PKGS}"
 		done
 		pkg install --yes --automatic ${PKGS}
 		make -C "${FS_PDIR}" ${MAKE_ARGS} clean install clean
