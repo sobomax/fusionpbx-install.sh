@@ -18,21 +18,21 @@ cwd=$(pwd)
 echo "Installing the FreeSWITCH package"
 
 FS_PDIR="/usr/ports/net/freeswitch"
-MAKE_ARGS="-DBATCH"
+MAKE_ARGS="-DBATCH DEFAULT_VERSIONS=\"pgsql=${database_version}\""
 
 #install the package
 if [ .$portsnap_enabled = .'true' ]; then
 	#dbatch uses the defaults alternative is make config-recursive
-	make -C "${FS_PDIR}" "${MAKE_ARGS}" install clean
+	make -C "${FS_PDIR}" ${MAKE_ARGS} install clean
 else
 	if [ .$switch_source = ."portpkghybrid" ]; then
 		PKGS=""
-		for dir in `make -C "${FS_PDIR}" "${MAKE_ARGS}" build-depends-list run-depends-list | sort -u`
+		for dir in `make -C "${FS_PDIR}" ${MAKE_ARGS} build-depends-list run-depends-list | sort -u`
 		do
 			PKGS="`make -C "${dir}" -V PKGNAME | sed 's|-[^-]*$||'` ${PKGS}"
 		done
 		pkg install --yes --automatic ${PKGS}
-		make -C "${FS_PDIR}" "${MAKE_ARGS}" clean install clean
+		make -C "${FS_PDIR}" ${MAKE_ARGS} clean install clean
 		pkg autoremove --yes
 	else
 		pkg install --yes freeswitch
