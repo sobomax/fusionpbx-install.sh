@@ -1,5 +1,4 @@
-
-#!/bin/sh
+#!/bin/sh -x
 
 # FusionPBX - Install
 # Mark J Crane <markjcrane@fusionpbx.com>
