@@ -63,7 +63,7 @@ fi
 #restart services
 if [ .$nginx_enabled = .'true' ]; then
 	service php-fpm restart
-	service nginx restart
+	service nginx restart || true
 fi
 if [ .$fail2ban_enabled = .'true' ]; then
 	service fail2ban restart
