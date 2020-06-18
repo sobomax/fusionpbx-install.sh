@@ -35,6 +35,11 @@ if [ .$sngrep_enabled = .'true' ]; then
 	resources/sngrep.sh
 fi
 
+#FusionPBX sources
+if [ .$nginx_enabled = .'true' ]; then
+        resources/fusionpbx-srcs.sh
+fi
+
 #FreeSWITCH
 if [ .$switch_enabled = .'true' ]; then
         resources/switch.sh
