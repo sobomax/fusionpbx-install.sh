@@ -18,9 +18,9 @@ if [ ."$php_version" = ."5" ]; then
 fi
 if [ ."$php_version" = ."7.1" ]; then
 	#pkg install --yes php70 php70-phar php70-pgsql php70-pdo php70-pdo_pgsql php70-pdo_odbc php70-pdo_sqlite php70-json php70-gd 
-	#pkg install --yes php70-imap php70-ldap php70-openssl php70-sockets php70-simplexml php70-xml php70-session
+	#pkg install --yes php70-imap php70-ldap php70-openssl php70-sockets php70-simplexml php70-xml php70-session php70-iconv
 	pkg install --yes php71 php71-phar php71-pdo php71-pdo_odbc php71-pdo_sqlite php71-json php71-gd php71-imap
-	pkg install --yes php71-ldap php71-openssl php71-sockets php71-simplexml php71-xml php71-session
+	pkg install --yes php71-ldap php71-openssl php71-sockets php71-simplexml php71-xml php71-session php71-iconv
 	if [ ."$database_version" = ."9.3" ]; then
 		pkg install --yes postgresql93-client
 		pkg install --yes php71-pdo_pgsql php71-pgsql
@@ -47,7 +47,7 @@ if [ ."$php_version" = ."7.1" ]; then
 fi
 if [ ."$php_version" = ."7.2" ]; then
 	pkg install --yes php72 php72-phar php72-pdo php72-pdo_odbc php72-pdo_sqlite php72-json php72-gd php72-imap
-	pkg install --yes php72-ldap php72-openssl php72-sockets php72-simplexml php72-xml php72-session
+	pkg install --yes php72-ldap php72-openssl php72-sockets php72-simplexml php72-xml php72-session php72-iconv
 	if [ ."$database_version" = ."9.5" ]; then
 		pkg install --yes postgresql95-client
 		pkg install --yes php72-pdo_pgsql php72-pgsql
@@ -66,7 +66,7 @@ if [ ."$php_version" = ."7.2" ]; then
 fi
 if [ ."$php_version" = ."7.3" ]; then
 	pkg install --yes php73 php73-phar php73-pdo php73-pdo_odbc php73-pdo_sqlite php73-json php73-gd php73-imap
-	pkg install --yes php73-ldap php73-openssl php73-sockets php73-simplexml php73-xml php73-session
+	pkg install --yes php73-ldap php73-openssl php73-sockets php73-simplexml php73-xml php73-session php73-iconv
 	if [ ."$database_version" = ."11" ]; then
 		pkg install --yes postgresql11-client
 		pkg install --yes php73-pdo_pgsql php73-pgsql
